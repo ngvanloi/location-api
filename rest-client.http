@@ -11,23 +11,23 @@ POST http://localhost:3000/location
 Content-Type: application/json
 
 {
-  "building": "A",
+  "building": "B",
   "locationName": "Lobby Level1",
-  "locationNumber": "A-01-Lobby",
-  "area": "80.620",
-  "parentId": 1
+  "locationNumber": "B-05-11-111",
+  "area": 80.620,
+  "parentId": 4
 }
 
 ### Update LOCATION REQUEST
-PUT http://localhost:3000/location/2
+PUT http://localhost:3000/location/3
 Content-Type: application/json
 
 {
- "id": 2,
- "building": "A",
- "locationName": "Lobby Level1",
- "locationNumber": "A-01-Lobby",
- "area": "80"
+  "building": "B",
+  "locationName": "Lobby Level1",
+  "locationNumber": "B-05-11-111",
+  "area": 80.620,
+  "parentId": 10
 }
 
 ### Update LOCATION REQUEST

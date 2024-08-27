@@ -83,4 +83,28 @@ export class LocationService {
     }
     this.logger.log(`Location with ID ${id} deleted successfully`);
   }
+
+  isReferenceParent(parent: Location, newLocation: Location): boolean {
+    const visited = [];
+    const stack = [parent];
+
+    while (stack.length > 0) {
+      const current = stack.pop();
+      if (current.id === newLocation.id) {
+        return true;
+      }
+      if (!visited.includes(current.id)) {
+        visited.push(current.id);
+        if (current.children) {
+          for (const child of current.children) {
+            if (!visited.includes(child.id)) {
+              stack.push(child);
+            }
+          }
+        }
+      }
+    }
+
+    return false;
+  }
 }
